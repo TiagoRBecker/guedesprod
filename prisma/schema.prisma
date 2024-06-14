@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String       @id @default(cuid())
+  name          String?
+  password      String?
+  email         String?      @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  profession    String?
+  docs          String?
+  Checkout      Checkout[]
+  terms         TermsOfUse[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Categories {
+  id          Int        @id @default(autoincrement())
+  img         String?
+  title       String?
+  description String?    @db.LongText
+  products    Products[]
+  creatAt     DateTime   @default(now())
+  updateAt    DateTime   @default(now())
+}
+
+model Products {
+  id           Int         @id @default(autoincrement())
+  img          String?
+  price        Float
+  cod          String?
+  title        String?     @db.LongText
+  Categories   Categories? @relation(fields: [categoriesId], references: [id])
+  categoriesId Int?
+  creatAt      DateTime    @default(now())
+  updateAt     DateTime    @default(now())
+}
+
+model Checkout {
+  id      Int      @id @default(autoincrement())
+  email   String
+  name    String?
+  adress  String?
+  phone   String?
+  userId  String? // Campo para a relação com o modelo User
+  User    User?    @relation(fields: [userId], references: [id])
+  Item    Item[]
+  creatAt DateTime @default(now())
+}
+
+model Item {
+  id         Int      @id @default(autoincrement())
+  name       String
+  checkoutId Int
+  checkout   Checkout @relation(fields: [checkoutId], references: [id])
+}
+
+
+model TermsOfUse {
+  id        Int     @id @default(autoincrement())
+  term_one  String
+  value_one Boolean @default(false)
+
+  term_two  String
+  value_two Boolean @default(false)
+
+  User    User?    @relation(fields: [userId], references: [id])
+  userId  String?
+  creatAt DateTime @default(now())
+}
