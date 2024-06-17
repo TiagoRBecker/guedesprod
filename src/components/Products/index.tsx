@@ -102,14 +102,14 @@ const Products = () => {
                   ou{" "}
                   <span className="text-[#3b8e7d]">
                     {" "}
-                    6x (
+                    3x (
                     {(
                       Number(categorie.products[0]?.price as any) / 600
                     ).toLocaleString("pt-br", {
                       style: "currency",
                       currency: "BRL",
                     })}{" "}
-                    + acréscimos)
+                    sem juros)
                   </span>{" "}
                 </p>
               </div>

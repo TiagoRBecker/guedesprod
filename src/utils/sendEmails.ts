@@ -776,6 +776,7 @@ export const SendEmailDoc = async (data:any,procuts:any)=>{
                                             "
                                             >Por favor, certifique-se de acessar e baixar os documentos dentro desse período. Após 3 horas, os links expirarão e não será mais possível acessá-los</a
                                           >
+                                        
                                         </span>
                                       </td>
                                     </tr>
@@ -892,6 +893,39 @@ export const SendEmailDoc = async (data:any,procuts:any)=>{
                                     `
                                           )
                                           .join("")}<br />
+                                            <p>Importante Leia Me antes de baixar os arquivos!</p>
+                                        <a href="https://guedesbampipublic.s3.sa-east-1.amazonaws.com/LEIA-ME.pdf">LEIA ME</a>
+                                        </p>
+                                      </td>
+                                      <td
+                                        align="left"
+                                        class="es-infoblock"
+                                        style="
+                                          padding: 5px;
+                                          margin: 0;
+                                          line-height: 14px;
+                                          font-size: 12px;
+                                          color: #cccccc;
+                                        "
+                                      >
+                                        <p
+                                          style="
+                                            margin: 0;
+                                            -webkit-text-size-adjust: none;
+                                            -ms-text-size-adjust: none;
+                                            mso-line-height-rule: exactly;
+                                            font-family: arial, 'helvetica neue',
+                                              helvetica, sans-serif;
+                                            line-height: 14px;
+                                            color: #cccccc;
+                                            font-size: 12px;
+                                          "
+                                        >
+                                        
+                                        
+                                       
+                                    
+                                        
                                         </p>
                                       </td>
                                     </tr>

@@ -53,10 +53,10 @@ const Revory = () => {
         {loading ? (
           <div className=" ">
             {message && (
-              <div>
+              <div className="w-full h-screen flex items-center justify-center flex-col gap-2">
                 <p className="text-green-400">{message}</p>
                 <Link href={"/authentication/signin"} className="btn small">
-                  <button className="btn-small">Login</button>
+                  <button className="btn py-2 px-4 text-white">Login</button>
                 </Link>
               </div>
             )}
@@ -94,13 +94,13 @@ const Revory = () => {
   return (
     <section className="w-full h-screen flex flex-col items-center mt-10">
       <img
-        src="/logo.png"
+        src="/logo.svg"
         alt="Logo"
         className="w-[45%] h-[50%] object-cover"
       />
       <form
         action=""
-        className="max-w-md  flex flex-col  gap-2"
+        className="w-[70%] flex flex-col  gap-2"
         onSubmit={recoveryPass}
       >
         <h1>Insira o E-mail cadastrado no sistema</h1>
@@ -109,14 +109,14 @@ const Revory = () => {
           onChange={(e) => setEmail(e.target.value)}
           type="text"
           placeholder="Insira o email"
-          className="outline-none my-2 border-[1px] border-gray-400 rounded-md pl-3 w-full h-8"
+          className="outline-none my-2 border-[1px] border-gray-400 rounded-md pl-3 w-full h-12"
         />
         {error ? (
           <p className="text-red-600">{message}</p>
         ) : (
           <p className="text-green-400">{message}</p>
         )}
-        <button type="submit" className="btn-small">
+        <button type="submit" className="btn-small text-white py-2 rounded-md">
           Enviar
         </button>
       </form>

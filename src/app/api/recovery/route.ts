@@ -20,16 +20,18 @@ export async function POST(req: any) {
             
 
         },
-        include:{
-            sessions:true
-        }
+       select:{
+        email:true,
+        id:true
+       }
     })
+    
+    
      
     if(getEmail){
-        const dynamicLink = `https://www.documentosparaharmonizacao.com.br/recovery?tk=${getEmail.id}`
+        const dynamicLink = `https://www.guedesbampipublicacoes.com.br/recovery?tk=${getEmail.id}`
         const info = await transporter.sendMail({
             from: process.env.EMAIL,
-            replyTo: email,
             to: getEmail.email as string,
             subject: "RECUPERAÇAO DE SENHA! ",
             html: `
@@ -41,7 +43,7 @@ export async function POST(req: any) {
          
           });
           
-      
+    
          
         return NextResponse.json({email:"Email enviado com sucesso! Verifique seu email e caixa da spam!"})
     }

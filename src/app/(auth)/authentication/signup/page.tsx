@@ -218,7 +218,7 @@ const SignUp = () => {
                 )}
               </div>
               <div className="w-full flex flex-col gap-2 items-center justify-center pt-4">
-                <button type="submit" className="btn">
+                <button type="submit" className="btn-small py-2 rounded-md text-white">
                   Criar conta
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">

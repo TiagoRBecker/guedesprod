@@ -1,5 +1,6 @@
 "use client";
 import { Dialog } from "@headlessui/react";
+import Link from "next/link";
 import { useState } from "react";
 export default function Modal({
   isOpen,
@@ -108,6 +109,19 @@ export default function Modal({
         );
       case 3:
         return (
+          <>
+            <Dialog.Description className="h-full md:w-full flex items-center justify-center flex-col md:h-[180px]  text-justify text-base text-[#072137] px-5 py-2 ">
+              Gostaríamos de informar que os documentos que você receberá
+              estarão no formato PPT. Para facilitar o envio e o
+              recebimento, esses arquivos serão compactados utilizando o
+              software WinRAR. Portanto, é essencial que você tenha o WinRAR
+              instalado em seu computador para poder descompactar os arquivos e
+              acessá-los adequadamente. <strong className="mt-2 text-left w-full">(Necessário editar os arquivos pelo PowerPoint Office)</strong> 
+            </Dialog.Description>
+          </>
+        );
+      case 4:
+        return (
           <div className="h-full md:w-full flex flex-col items-center justify-center md:h-[180px] text-justify text-base text-[#072137] px-5 py-2 mt-10 ">
             <p>
               Ao aceitar os termos de uso, você concorda em cumprir e respeitar
@@ -206,28 +220,25 @@ export default function Modal({
         </Dialog.Title>
         <div>{getLayout()}</div>
         <div className="w-full flex items-center justify-center gap-2">
-          {
-            currentStep === 1 ?
-            <>
-            
-            </>
-            :
+          {currentStep === 1 ? (
+            <></>
+          ) : (
             <button
-            className="border-2 border-gray-400 py-1 px-4 bg-slate-400 rounded-md"
-            onClick={handleMenus}
-            disabled={currentStep === 1}
-          >
-            Voltar
-          </button>
-          }
-        
-          {currentStep === 3 ? (
+              className="border-2 border-gray-400 py-1 px-4 bg-slate-400 rounded-md"
+              onClick={handleMenus}
+              disabled={currentStep === 1}
+            >
+              Voltar
+            </button>
+          )}
+
+          {currentStep === 4 ? (
             <></>
           ) : (
             <button
               className="border-2 border-gray-400 py-1 px-4 bg-slate-400 rounded-md"
               onClick={handlePlus}
-              disabled={currentStep === 3}
+              disabled={currentStep === 4}
             >
               Próximo
             </button>

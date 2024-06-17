@@ -70,7 +70,7 @@ export async function POST(req: Request, res: Response) {
                 installments: [
                   {
                     number: 1,
-                    total: totalAmount + 10,
+                    total: totalAmount ,
                   },
                   {
                     number: 2,
@@ -80,14 +80,7 @@ export async function POST(req: Request, res: Response) {
                     number: 3,
                     total: totalAmount  ,
                   },
-                  {
-                    number: 4,
-                    total: totalAmount  ,
-                  },
-                  {
-                    number: 5,
-                    total: totalAmount  ,
-                  },
+                  
                 ],
                 statement_descriptor: "GuedesBampi",
               },

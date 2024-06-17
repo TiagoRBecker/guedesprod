@@ -11,11 +11,11 @@ import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BeatLoader } from "react-spinners";
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from "next/navigation";
 const Signin = () => {
-   const searchParams = useSearchParams()
-   const id = searchParams.get("product")
-   
+  const searchParams = useSearchParams();
+  const id = searchParams.get("product");
+
   const router = useRouter();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,20 +30,19 @@ const Signin = () => {
   });
 
   const onSubmit = handleSubmit(async (data) => {
-    
     try {
       const { email, password } = data;
 
       const login = await signIn("credentials", {
         email,
         password,
-       
-     
-        
-      })
-      
-      if(login?.ok && login.url ){
-     
+        redirect: false,
+      });
+      console.log(login);
+      if (login?.error) {
+        setError(login?.error as string);
+        return
+      } else {
         toast.success(`Usuário logado com sucesso aguarde...`, {
           position: "bottom-left",
           autoClose: 5000,
@@ -54,22 +53,15 @@ const Signin = () => {
           progress: undefined,
           theme: "light",
         });
-        router.push(login?.url as string);
+        router.push("/");
         reset();
-      }else{
-        setError(login?.error as string)
+        return
+       
       }
-      
-    } catch (error:any) {
-       console.log(error)
+    } catch (error: any) {
+      console.log(error);
     }
-   ;
-     
-    
-
-    
   });
- 
 
   return (
     <>
@@ -133,23 +125,24 @@ const Signin = () => {
                   </div>
                   <Link href={"/recovery"} className="text-gray-500">
                     Esqueceu sua senha?
-                    </Link>
+                  </Link>
                 </div>
               </div>
 
               <div className="w-full h-full flex items-center justify-center">
-             
-            <button className="btn px-2 py-1 text-white rounded-sm">Entrar</button>
-     
-               
-                
-            
+                <button className="btn px-2 py-1 text-white rounded-sm">
+                  Entrar
+                </button>
               </div>
             </form>
             <h2 className="text-center  text-">ou</h2>
             <div className="w-full flex items-center justify-center  ">
               <button
-                onClick={() => signIn("google", { callbackUrl: id ? `/categories/${id}`:"/" })}
+                onClick={() =>
+                  signIn("google", {
+                    callbackUrl: id ? `/categories/${id}` : "/",
+                  })
+                }
                 className="w-full flex items-center justify-center  border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
               >
                 <svg
