@@ -15,6 +15,6 @@ export async function POST(req: Request) {
     options
   );
   const response = await request.json();
-  console.log(response.customer.email)
+
   return NextResponse.json({ message:response.customer.email});
 }

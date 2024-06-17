@@ -41,8 +41,8 @@ const Home = () => {
               </div>
               <p className="mt-4 font-bold w-full  md:w-[70%]">
                 Selecione individualmente e adicione ao carrinho os (TCLE’s+
-                Contratos) disponíveis abaixo,de acordo comos procedimentos que
-                deseja receberem seu e-mail.
+                Contratos) disponíveis abaixo,de acordo com os procedimentos que
+                deseja receber em seu e-mail.
               </p>
             </div>
             <div className="w-full mb-6">
@@ -67,7 +67,7 @@ const Home = () => {
                 <p>Faça seu cadastro e receba imediatamente seus documentos</p>
               </div>
               <p className="mt-4 font-bold md:w-[70%]">
-                Faça o seu cadastro, realize ocheckout de pagamento e receba
+                Faça o seu cadastro, realize o checkout de pagamento e receba
                 agora seus documentos editáveis e personalizáveis direto em seu
                 e-mail.
               </p>
