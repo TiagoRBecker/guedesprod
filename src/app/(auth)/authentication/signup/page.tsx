@@ -12,6 +12,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/Loading";
+import { signIn } from "next-auth/react";
 const SignUp = () => {
   const regex = /^(?:(?![a-zA-Z]{2,}|\\d{2,}).)*$/;
   const [loading, setLoading] = useState(false);
@@ -42,10 +43,18 @@ const SignUp = () => {
         ...data,
       }),
     });
-    const res = await req.json();
-    if (req.ok) {
+
+    if (req.status === 200) {
+      const res = await req.json();
+
       setLoading(false);
-      reset();
+      const login = await signIn("credentials", {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      });
+
+      setLoading(false);
 
       toast.success(`${res.message}`, {
         position: "bottom-left",
@@ -57,11 +66,13 @@ const SignUp = () => {
         progress: undefined,
         theme: "light",
       });
-      router.push("/authentication/signin");
+      router.push("/");
+
+      return;
     } else {
       setLoading(false);
-      reset();
 
+      const res = await req.json();
       toast.error(`${res.message}`, {
         position: "bottom-left",
         autoClose: 5000,
@@ -72,6 +83,7 @@ const SignUp = () => {
         progress: undefined,
         theme: "light",
       });
+      return;
     }
   });
   if (loading) {
@@ -89,6 +101,9 @@ const SignUp = () => {
         <div className="w-full h-full  grid-cols-1 md:grid md:grid-cols-2 ">
           <div className="bg-[url('/on.png')] bg-cover bg-center w-full h-screen  brightness-50 hidden  md:block"></div>
           <div className="w-full h-full flex flex-col items-center justify-center  px-6 mx-auto md:h-full lg:py-0">
+            <Link href={"/"}>
+              <img src="/logo.svg" alt="Logo" className="w-full h-[180px]" />
+            </Link>
             <h1 className="text-color font-bold text-2xl w-full text-left py-4 uppercase">
               Criar Conta
             </h1>
@@ -211,14 +226,18 @@ const SignUp = () => {
                     {errors?.confirm.message}
                   </p>
                 )}
-                 {error && (
+                {error && (
                   <p className="text-red-600 text-sm">
-                    Por razões de segurança, não são permitidas senhas que contenham sequências consecutivas
+                    Por razões de segurança, não são permitidas senhas que
+                    contenham sequências consecutivas
                   </p>
                 )}
               </div>
               <div className="w-full flex flex-col gap-2 items-center justify-center pt-4">
-                <button type="submit" className="btn-small py-2 rounded-md text-white">
+                <button
+                  type="submit"
+                  className="btn-small w-full py-2 rounded-md text-white"
+                >
                   Criar conta
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">

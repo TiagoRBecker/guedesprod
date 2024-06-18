@@ -93,11 +93,17 @@ const Revory = () => {
   }
   return (
     <section className="w-full h-screen flex flex-col items-center mt-10">
-      <img
+    <div className="w-full h-[250px] mx-auto">
+      <Link href={'/'}>
+    <img
         src="/logo.svg"
         alt="Logo"
-        className="w-[45%] h-[50%] object-cover"
+        className="w-[45%] h-full object-cover mx-auto"
       />
+      </Link>
+    </div>
+    
+    
       <form
         action=""
         className="w-[70%] flex flex-col  gap-2"

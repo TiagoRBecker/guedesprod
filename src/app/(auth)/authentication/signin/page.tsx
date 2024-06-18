@@ -12,12 +12,14 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BeatLoader } from "react-spinners";
 import { useSearchParams } from "next/navigation";
+import Loading from "@/components/Loading";
 const Signin = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("product");
 
   const router = useRouter();
   const [error, setError] = useState("");
+
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -30,18 +32,20 @@ const Signin = () => {
   });
 
   const onSubmit = handleSubmit(async (data) => {
+    setLoading(true);
     try {
-      const { email, password } = data;
+    
 
       const login = await signIn("credentials", {
-        email,
-        password,
+        email:data.email,
+        password:data.password,
         redirect: false,
       });
-      console.log(login);
+      
       if (login?.error) {
         setError(login?.error as string);
-        return
+        setLoading(false);
+        return;
       } else {
         toast.success(`Usuário logado com sucesso aguarde...`, {
           position: "bottom-left",
@@ -55,20 +59,30 @@ const Signin = () => {
         });
         router.push("/");
         reset();
-        return
-       
+        setLoading(false);
+        return;
       }
     } catch (error: any) {
       console.log(error);
+      setLoading(false);
     }
   });
-
+  if (loading) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center flex-col">
+        <Loading />
+      </div>
+    );
+  }
   return (
     <>
       <Head />
       <section className="w-full h-screen bg-white">
         <div className="w-full h-full grid-cols-1  md:grid md:grid-cols-3 ">
-          <div className="w-full h-full  flex flex-col justify-center px-4 gap-4 ">
+          <div className="w-full h-full  flex flex-col justify-center p-8 gap-4 ">
+            <Link href={"/"}>
+            <img src="/logo.svg" alt="Logo" className="w-full h-[180px]" />
+            </Link>
             <h1 className="text-xl  text-left w-full  font-bold uppercase text-[#54595F]">
               Entrar em sua conta
             </h1>
@@ -86,7 +100,7 @@ const Signin = () => {
                   className="w-full border-b-[1px] border-gray-500 outline-none pb-2"
                   placeholder="name@company.com"
                 />
-                {error && <p className="text-red-600 text-sm">{error}</p>}
+
                 {errors.email && (
                   <p className="text-red-600 text-sm">
                     {errors?.email.message}
@@ -106,7 +120,7 @@ const Signin = () => {
                   placeholder="••••••••"
                   className="w-full border-b-[1px] border-gray-500 outline-none pb-2"
                 />
-                {error && <p className="text-red-600 text-sm">{error}</p>}
+
                 {errors.password && (
                   <p className="text-red-600 text-sm">
                     {errors?.password.message}
@@ -130,7 +144,7 @@ const Signin = () => {
               </div>
 
               <div className="w-full h-full flex items-center justify-center">
-                <button className="btn px-2 py-1 text-white rounded-sm">
+                <button className="btn-small px-2 py-1 text-white rounded-sm">
                   Entrar
                 </button>
               </div>
@@ -139,9 +153,7 @@ const Signin = () => {
             <div className="w-full flex items-center justify-center  ">
               <button
                 onClick={() =>
-                  signIn("google", {
-                    callbackUrl: id ? `/categories/${id}` : "/",
-                  })
+                  signIn("google",{callbackUrl:"/"})
                 }
                 className="w-full flex items-center justify-center  border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
               >
@@ -203,6 +215,12 @@ const Signin = () => {
                 <span>Continue com Google</span>
               </button>
             </div>
+
+            {error && (
+              <div className="w-full flex items-center justify-center bg-red-700 rounded-md py-4">
+                <p className="text-white text-sm">{error}</p>{" "}
+              </div>
+            )}
           </div>
           <div className=" md:bg-[url('/on.png')] bg-cover bg-center w-full h-screen col-span-2 brightness-50 hidden md:block "></div>
         </div>

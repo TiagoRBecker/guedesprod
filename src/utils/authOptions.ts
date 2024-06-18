@@ -23,21 +23,26 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Username", type: "text", placeholder: "jsmith" },
+        email: { label: "Username", type: "text", placeholder: "name" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any, req): Promise<any> {
+         const { email, password} = credentials
         const user = await prisma.user.findUnique({
           where: {
-            email: credentials.email,
+            email: email,
           },
         });
-        if (user && !user.password) {
-          throw new Error("Usuário cadastrado via google");
+      
+        if(!user){
+          throw new Error("Usuário não cadastrado no sistema!");
+        }
+        if (user && !user?.password) {
+          throw new Error("Usuário cadastrado via google!");
         
         }
         const hash = await bcrypt.compare(
-          credentials.password,
+          password,
           user?.password as string
         );
         if (!hash) {

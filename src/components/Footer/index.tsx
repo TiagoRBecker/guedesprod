@@ -91,7 +91,7 @@ const Footer = () => {
         </div>
         <div className="w-full h-full py-4 md:h-[250px] ">
           <Link href={"/"}>
-         <img src="/logo.svg" alt="Logo" className="w-full h-[200px] object-cover" />
+         <img src="/logo.svg" alt="Logo" className="w-full h-full object-cover md:w-full md:h-[200px] " />
          </Link>
         </div>
       </div>

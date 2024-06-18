@@ -269,7 +269,9 @@ body {
   border-radius: 50%;
   animation: pulsar 0.9s linear infinite;
 }
-
+#green input[type="checkbox"]:checked  {
+  background-color: #4caf50; /* Cor de fundo quando marcado */
+}
 @keyframes pulsar {
   0% {
     transform: scale(0.9);

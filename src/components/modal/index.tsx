@@ -90,11 +90,13 @@ export default function Modal({
                 </label>
                 <label className="flex w-full gap-3">
                   <input
-                    className="w-6 h-6"
+                    
+                    className="w-6 h-6 "
                     type="checkbox"
                     name="notAccepted"
                     checked={!notAccepted}
                     onChange={handleNotAccepted}
+                    
                   />
                   Não concordo com os termos de uso.
                 </label>
@@ -224,7 +226,7 @@ export default function Modal({
             <></>
           ) : (
             <button
-              className="border-2 border-gray-400 py-1 px-4 bg-slate-400 rounded-md"
+              className="  py-1 px-4 bg-slate-400 rounded-md"
               onClick={handleMenus}
               disabled={currentStep === 1}
             >
@@ -236,7 +238,7 @@ export default function Modal({
             <></>
           ) : (
             <button
-              className="border-2 border-gray-400 py-1 px-4 bg-slate-400 rounded-md"
+              className=" py-1 px-4 bg-green-700 rounded-md text-white"
               onClick={handlePlus}
               disabled={currentStep === 4}
             >

@@ -39,12 +39,12 @@ const Nav = () => {
    }
   return (
     <header className="px-4 w-full h-32 flex items-center justify-around bg-white relative  border-b-[1px] border-gray-400 z-50 ">
-      <div className="w-[40%]  flex items-center justify-center py-4 px-4 md:w-[20%] h-full  ">
+      <div className="w-full  flex items-center justify-center py-4 px-4 md:w-[20%] h-full  ">
         <Link href={"/"}>
           <img
             src="/logo.svg"
             alt="Logo"
-            className="w-52 h-full object-cover"
+            className="w-full h-[90px] md:w-52 md:h-full object-cover"
           />
         </Link>
       </div>

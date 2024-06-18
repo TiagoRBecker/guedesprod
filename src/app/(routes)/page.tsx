@@ -82,9 +82,9 @@ const Home = () => {
         </h1>
         <div className="w-full bg-gray-100 py-10">
           <div className="max-w-[1240px] mx-auto gap-10 grid-cols-1 md:grid md:grid-cols-4 ">
-            <div className="bg-white py-10 px-2 flex items-center justify-center flex-col">
-              <img src="/5.svg" alt="Icon" className="h-32" />
-              <div className="mt-2 w-full h-44">
+            <div className="py-4 md:bg-white md:py-10 px-2 flex items-center justify-center flex-col">
+              <img src="/5.svg" alt="Icon" className="w-full h-full md:h-32" />
+              <div className="h-full md:mt-2 w-full md:h-44">
                 <p className="text-justify mt-4">
                   Evite problemas com a subjetividade da{" "}
                   <strong>percepção de resultados por parte do paciente</strong>{" "}
@@ -92,9 +92,9 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="bg-white py-10 px-2 flex items-center justify-center flex-col">
-              <img src="/3.svg" alt="Icon" className="h-32" />
-              <div className="mt-2 w-full h-44">
+            <div className="py-4 md:bg-white md:py-10 px-2 flex items-center justify-center flex-col">
+              <img src="/3.svg" alt="Icon" className="w-full h-full md:h-32" />
+              <div className="h-full md:mt-2 w-full md:h-44">
                 <p className="text-justify mt-4">
                   Utilize prontuários pautados em{" "}
                   <strong>princípios bioéticos</strong> que descrevam com
@@ -103,9 +103,9 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="bg-white py-10 px-2 flex items-center justify-center flex-col">
-              <img src="/1.svg" alt="Icon" className="h-32" />
-              <div className="mt-2 w-full h-44">
+            <div className="py-4 md:bg-white md:py-10 px-2 flex items-center justify-center flex-col">
+              <img src="/1.svg" alt="Icon" className="w-full h-full md:h-32" />
+              <div className="h-full md:mt-2 w-full md:h-44">
                 <p className="text-justify mt-4">
                   Use o seu prontuário como principal meio de defesa da sua
                   atividade profissional, através do conhecimento jurídico de
@@ -115,9 +115,9 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="bg-white py-10 px-2 flex items-center justify-center flex-col">
-              <img src="/6.svg" alt="Icon" className="h-32" />
-              <div className="mt-2 w-full h-44">
+            <div className="py-4 md:bg-white md:py-10 px-2 flex items-center justify-center flex-col">
+              <img src="/6.svg" alt="Icon" className="w-full h-full md:h-32" />
+              <div className="h-full md:mt-2 w-full md:h-44">
                 <p className="text-justify mt-4">
                   Contratos e termos editáveis e personalizáveis - Específicos
                   para cada procedimento e{" "}

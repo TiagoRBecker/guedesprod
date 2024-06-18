@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       }
       else{
         const hash = await bcrypt.hashSync(password, Number(process.env.SALT));
-        const create = await prisma.user.create({
+        const user = await prisma.user.create({
             data:{
                 name:name,
                 email:email,
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
                 image:"https://res.cloudinary.com/tiagobecker/image/upload/v1693489085/user_c2gvjz.png"
             }
          })
-         return NextResponse.json({ message:"Cadastro realizado com sucesso!" },{status:200})
+         return NextResponse.json({ message:"Cadastro realizado com sucesso!", email:user.email, password:user.password },{status:200})
       }
      
    

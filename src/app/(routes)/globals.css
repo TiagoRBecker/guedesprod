@@ -84,8 +84,16 @@ body {
   -moz-animation:    fade_move_down 2s ease-in-out infinite;
   animation:         fade_move_down 2s ease-in-out infinite;
 }
+@media  screen and (max-width: 650px) {
+  .scroll-down{
+    display:none;
+  }
+  
+}
 
-
+#green input[type="checkbox"]:checked  {
+  background-color: #4caf50; /* Cor de fundo quando marcado */
+}
 /*animated scroll arrow animation*/
 @-webkit-keyframes fade_move_down {
   0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
