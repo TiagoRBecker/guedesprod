@@ -34,8 +34,8 @@ export async function POST(req: Request, res: Response) {
         Key: id,
       });
       const url = await getSignedUrl(aws, getObjectCommand, {
-        expiresIn: 5 * 60,
-      });
+        expiresIn: 3 * 60 * 60, 
+    });
 
       archives.push({
         id: i.id,
