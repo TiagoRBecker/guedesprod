@@ -16,14 +16,39 @@ export async function POST(req: Request, res: Response) {
   } as any);
 
   try {
-    const items = data.items.map((id: any) => parseInt(id.code));
+    
+     const pagarme = await fetch(`https://api.pagar.me/core/v5/orders/${data.id}`,{
+      headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+      authorization:`Basic ${process.env.GAT_DEV}`,
+    },})
+    const response = await pagarme.json()
+    if(response.status === "paid"){
+
+
+     
+    const items = response.items.map((id: any) => parseInt(id.code));
     const getDocs = await prisma.products.findMany({
       where: {
         id: {
           in: items,
         },
+        
       },
+      select:{
+        id:true,
+        img:true,
+        title:true,
+        categoriesId:true,
+        creatAt:true,
+        updateAt:true
+
+      }
     });
+
+    
+    
 
     let archives = [];
     for (const i of getDocs) {
@@ -46,17 +71,24 @@ export async function POST(req: Request, res: Response) {
       });
     }
     //Hook para envio de emails 
-    const sendEmail = await SendEmailDoc(data, archives);
-   
+    const sendEmail = await SendEmailDoc(response, archives);
+  
 
     return NextResponse.json(
       { message: "E-mail e nota fiscal enviadas com sucesso !" },
       { status: 200 }
     );
+  }
+  return NextResponse.json(
+    { message: "Erro, pagamento nao foi realizado!" },
+    { status: 404 }
+  );
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error }, { status: 500 });
   } finally {
     await prisma.$disconnect();
   }
+    
+    
 }

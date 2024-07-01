@@ -13,6 +13,7 @@ export async function POST(req: any) {
       pass: process.env.PASS,
     },
   });
+  
  try {
     const getEmail = await prisma?.user.findUnique({
         where:{
