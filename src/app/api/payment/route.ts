@@ -57,10 +57,10 @@ export async function POST(req: Request, res: Response) {
             
             checkout: {
               expires_in: 108000,
-              default_payment_method: "pix",
+              default_payment_method: "credit_card",
               accepted_payment_methods: ["pix", "credit_card"],
               success_url: "https://www.guedesbampipublicacoes.com.br/sucess",
-              skip_checkout_success_page: true,
+              skip_checkout_success_page: false,
               customer_editable: true,
               billing_address_editable: true,
               Pix: {
