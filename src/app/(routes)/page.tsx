@@ -136,10 +136,10 @@ const Home = () => {
         </h1>
       </section>
       <Products />
-      <section className="w-full h-full  md:w-full  bg-[#d3ebe2] items-center flex  flex-col md:gap-10 md:py-[1.5rem]">
-        <div className="w-full md:w-[70%] mx-auto py-10 flex flex-col gap-3">
-          <h1 className="text-center font-bold ">QUEM SOMOS?</h1>
-          <h2 className="text-justify px-2">
+      <section className="w-full h-full grid grid-cols-1 md:grid md:grid-cols-2 bg-[#55bcd5] py-[1.5rem]">
+        <div className="w-full   flex flex-col gap-5 items-center justify-center px-4">
+          <h1 className="text-center font-bold text-xl ">QUEM SOMOS?</h1>
+          <h2 className="text-justify ">
             Somos uma Editora com foco em soluções digitais, publicações e
             capacitação multidisciplinar. Publicamos trabalhos técnicos e
             ferramentas digitais relevantes para aprimoramento profissional.
@@ -151,6 +151,19 @@ const Home = () => {
             usuários personalize cada documento de acordo com suas necessidades
             específicas
           </h2>
+          <h1 className="w-full text-left font-bold">SUPORTE JURÍDICO:</h1>
+          <div className="w-full  text-left">
+          <h1 className="text-blue-700 font-bold">DRA. DEUSA GUEDES</h1>
+          <p>DIREITO MÉDICO, EMPRESARIAL E DA SAÚDE, ATUA NA DEFESA DE CLÍNICAS E CENTROS DE ESTÉTICA.</p>
+          </div>
+          <div className="w-full  text-left">
+          <h1 className="text-blue-700 font-bold">DR. ALEXANDRE BAMPI:</h1>
+          <p>DIREITO EMPRESARIAL DA SAÚDE E CONTRATUAL, ADVOGADO, ADMINISTRADOR, MESTRE E PROFESSOR DE PÓS-GRADUAÇÃO.</p>
+          </div>
+          
+        </div>
+        <div className="w-full h-full">
+          <img src="/gal.webp" alt="galeria" className="w-full h-auto object-fill"/>
         </div>
       </section>
       <Cart/>

@@ -52,10 +52,10 @@ const Products = () => {
                   key={index}
                 >
                   <li
-                    className="flex gap-2 cursor-pointer"
+                    className="flex gap-2 cursor-pointer items-center"
                     onClick={() => addCart(products)}
                   >
-                    <p className="w-8 h-8 flex items-center justify-center btn rounded-sm text-white">
+                    <p className="w-[10%] md:w-8 h-8 flex items-center justify-center btn rounded-sm text-white">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -71,7 +71,7 @@ const Products = () => {
                         />
                       </svg>
                     </p>
-                    <p className="text-[13px]">{products.title}</p>
+                    <p className="text-[13px] w-[90%]">{products.title}</p>
                   </li>
                  
                 </div>
@@ -104,7 +104,7 @@ const Products = () => {
                     {" "}
                     3x (
                     {(
-                      Number(categorie.products[0]?.price as any) / 600
+                      Number(categorie.products[0]?.price as any) / 300
                     ).toLocaleString("pt-br", {
                       style: "currency",
                       currency: "BRL",
