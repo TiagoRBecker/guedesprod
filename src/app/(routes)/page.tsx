@@ -138,8 +138,8 @@ const Home = () => {
       <Products />
       <section className="w-full h-full grid grid-cols-1 md:grid md:grid-cols-2 bg-[#55bcd5] py-[1.5rem]">
         <div className="w-full   flex flex-col gap-5 items-center justify-center px-4">
-          <h1 className="text-center font-bold text-xl ">QUEM SOMOS?</h1>
-          <h2 className="text-justify ">
+          <h1 className="text-center font-bold text-3xl ">QUEM SOMOS?</h1>
+          <h2 className="text-justify text-lg ">
             Somos uma Editora com foco em soluções digitais, publicações e
             capacitação multidisciplinar. Publicamos trabalhos técnicos e
             ferramentas digitais relevantes para aprimoramento profissional.

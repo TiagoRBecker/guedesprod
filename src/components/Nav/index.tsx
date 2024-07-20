@@ -44,7 +44,7 @@ const Nav = () => {
           <img
             src="/logo.svg"
             alt="Logo"
-            className="w-full h-[90px] md:w-52 md:h-full object-cover"
+            className="w-full h-[90px] object-contain md:w-52 md:h-full md:object-cover"
           />
         </Link>
       </div>
