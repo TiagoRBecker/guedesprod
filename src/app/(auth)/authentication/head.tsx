@@ -9,10 +9,7 @@ export default function Head (){
         content="Advogados da Harmonização: Especialistas em contratos e proteção jurídica para clínicas de harmonização facial. Oferecemos documentos personalizados, Termo de Consentimento Livre e Esclarecido (TCLE), anamnese e blindagem legal. Consulta online disponível para orientação jurídica completa."
       />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta
-        name="google-site-verification"
-        content="jNJcq8-8QXjpXr-iZUtMH2ywudj40RypcsDQaVkCrr4"
-      />
+      <meta name="google-site-verification" content="kC941286Pc9FVFKKv-0XEoJVtqW9jjyow0dmjMQJW8o" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

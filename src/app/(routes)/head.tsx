@@ -7,7 +7,7 @@ export default function Head() {
         name="description"
         content="Harmonização Facial,Anamnese,Harmonização Prontuários, Documentos para harmonização, Termo de consentimento harmonização, Termo de consentimento botox, Termo de consentimento ácido hialurônico, Advogado da harmonização, harmonização facial, harmonização corporal, toxina botulínica, TCLE Botox, glúteo, estética corporal, estética facial, hiluronidaze, antes e depois harmonização, harmonização do rosto, orofacial, procedimento harmonização, advogado harmonização, contrato advogado harmonização, termos de consentimento advogado, termos para harmonização, termo para botox, odontologia, biomédico esteta, farmacêutico esteta, cirurgião plástico, preenchimento labial, consentimento livre e esclarecido, microagulhamento, Congresso de harmonização orofacial, full face, congrehof, gsenne, congressoestetika, dentalconferenceonboard, CIOSP, congressosbti, Associação Brasileira de Odontologia, CIORJ, Congresso de Lifting Orofacial, CONTOX, FACE International Congress, Sociedade Brasileira de Toxina Botulínica, Sociedade Brasileira de Odontologia Estética, dentistafacial, belguerraexperience, Aesthetic Meeting, Full Body, SBTI, sboe, esteticainsul, Aesthetic Meeting Revanesse, esteticainsaopaulo, congressoharmonia, Associação Portuguesa de Harmonização e Terapêutica Orofacial, APHTOF, conesporj, conselho regional de odontologia, cro, conselho regional de biomedicina, CRBM"
       />
-
+      <meta name="google-site-verification" content="kC941286Pc9FVFKKv-0XEoJVtqW9jjyow0dmjMQJW8o" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       <link
@@ -32,7 +32,7 @@ export default function Head() {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content="https://www.documentosparaharmonizacao.com.br/"
+        content="https://www.guedesbampipublicacoes.com.br/"
       />
       <meta property="og:title" content="Guedes Publicações" />
       <meta
@@ -43,7 +43,7 @@ export default function Head() {
       <meta property="twitter:card" content="summary_large_image" />
       <meta
         property="twitter:url"
-        content="https://www.documentosparaharmonizacao.com.br/"
+        content="https://www.guedesbampipublicacoes.com.br/"
       />
       <meta property="twitter:title" content="Guedes Publicações" />
       <meta
