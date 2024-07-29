@@ -1,5 +1,5 @@
 "use client"
-
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./global.css";
 import { Poppins } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
@@ -37,7 +37,7 @@ export default function RootLayout({ children,}: { children: React.ReactNode;}) 
       
 
       
-     
+      <GoogleAnalytics gaId="AW-16657432376" />
       
     
 </body>

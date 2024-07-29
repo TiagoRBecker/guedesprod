@@ -9,7 +9,7 @@ export default function Head() {
       />
       <meta name="google-site-verification" content="kC941286Pc9FVFKKv-0XEoJVtqW9jjyow0dmjMQJW8o" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+   
       <link
         rel="apple-touch-icon"
         sizes="180x180"
