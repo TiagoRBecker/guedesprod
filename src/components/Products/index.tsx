@@ -89,7 +89,7 @@ const Products = () => {
                 </h1>
               </div>
               <div className="flex items-center gap-2">
-                <p className="text-color font-bold">
+                <p className="text-color text-2xl font-bold">
                   {(
                     Number(categorie.products[0]?.price as any) / 100
                   ).toLocaleString("pt-br", {

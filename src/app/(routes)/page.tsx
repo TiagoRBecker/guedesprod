@@ -75,12 +75,21 @@ const Home = () => {
           </div>
         </div>
 
-        <h1 className="text-xl w-full text-blue-900    px-1 text-left md:text-xl font-bold md:w-[80%]  md:text-center  py-[3rem] ">
+       
+        
+        <h1 className="text-xl w-full text-blue-900    px-1 text-left md:text-xl font-bold md:w-[80%]  md:text-center  py-[1rem] ">
+          SELECIONE ABAIXO OS DOCUMENTOS QUE VOCÊ PRECISA PARA TRABALHAR COM
+          MAIS SEGURANÇA JURÍDICA EM SEUS PROCEDIMENTOS
+        </h1>
+      </section>
+      <Products />
+      <h1 className="text-xl w-full text-blue-900    px-1 text-left md:text-xl font-bold md:w-full  md:text-center  py-[3rem] ">
           PRONTUÁRIOS EDITÁVEIS E PERSONALIZÁVEIS DESENVOLVIDOS POR
           ESPECIALISTAS DE DIVERSAS ÁREAS DA SAÚDE E ADVOGADOS RENOMADOS NO
           SEGMENTO DE HARMONIZAÇÃO.
         </h1>
-        <div className="w-full bg-gray-100 py-10">
+      <div className="w-full bg-gray-100 py-10">
+     
           <div className="max-w-[1240px] mx-auto gap-10 grid-cols-1 md:grid md:grid-cols-4 ">
             <div className="py-4 md:bg-white md:py-10 px-2 flex items-center justify-center flex-col">
               <img src="/5.svg" alt="Icon" className="w-full h-full md:h-32" />
@@ -130,12 +139,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <h1 className="text-xl w-full text-blue-900    px-1 text-left md:text-xl font-bold md:w-[80%]  md:text-center  py-[1rem] ">
-          SELECIONE ABAIXO OS DOCUMENTOS QUE VOCÊ PRECISA PARA TRABALHAR COM
-          MAIS SEGURANÇA JURÍDICA EM SEUS PROCEDIMENTOS
-        </h1>
-      </section>
-      <Products />
       <section className="w-full h-full grid grid-cols-1 md:grid md:grid-cols-2 bg-[#55bcd5] py-[1.5rem]">
         <div className="w-full   flex flex-col gap-5 items-center justify-center px-4">
           <h1 className="text-center font-bold text-3xl ">QUEM SOMOS?</h1>
