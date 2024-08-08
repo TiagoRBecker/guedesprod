@@ -67,8 +67,8 @@ const Home = () => {
                 <p>Faça seu cadastro e receba imediatamente seus documentos</p>
               </div>
               <p className="mt-4 font-bold md:w-[70%]">
-                Faça o seu cadastro, realize o checkout de pagamento e receba
-                agora seus documentos editáveis e personalizáveis direto em seu
+                Faça o seu cadastro, realize o checkout de pagamento e <span className="font-bold text-[19px] text-[#329f83]">receba
+                agora seus documentos editáveis e personalizáveis</span> direto em seu
                 e-mail.
               </p>
             </div>
